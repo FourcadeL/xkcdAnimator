@@ -6,7 +6,7 @@ A small python module for generation of animated XKCD plots with matplotlib
 - PIL
 - imageio
 
-(you might ave to install fonts **xkcd**, **xkcd Script**, **Comic Neue** and **Comic Sans MS** for full styling but it will still work without them)
+(you might have to install fonts **xkcd**, **xkcd Script**, **Comic Neue** and **Comic Sans MS** for full styling but it will still work without them)
 
 ## Usage
 
