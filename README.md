@@ -1,12 +1,15 @@
 # xkcdAnimator
-A small python module for generation of animated XKCD plots with matplotlib
+A small python module for generation of animated XKCD plots with matplotlib.
 
 ## Dependencies
 - matplotlib
 - PIL
 - imageio
 
-(you might have to install fonts **xkcd**, **xkcd Script**, **Comic Neue** and **Comic Sans MS** for full styling but it will still work without them)
+
+You might have to install fonts **xkcd**, **xkcd Script**, **Comic Neue** and **Comic Sans MS** for full styling but it will still work without them).
+You can find the xkcd fonts [here](https://github.com/ipython/xkcd-font).
+
 
 ## Usage
 

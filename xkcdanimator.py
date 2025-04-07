@@ -49,7 +49,7 @@ def animate(drawFun, drawArgs, saveFile="out.gif", nFrames=4,
         the base parameter for xkcd scale
     lBase : int, optional
         the base parameter for xkcd length
-    rBase : intn optional
+    rBase : int, optional
         the base parameter for xkcd randomness
     fps : int, optional
         the number of frames per seconds for the GIF
@@ -60,15 +60,15 @@ def animate(drawFun, drawArgs, saveFile="out.gif", nFrames=4,
             scale = sBase + sScale*random.uniform(-1, 1)
             length = lBase + lScale*random.uniform(-1, 1)
             rand = rBase + rScale*random.uniform(-1, 1)
-            plt.xkcd(scale=scale, length=length, randomness=rand)
-            drawFun(*drawArgs)
-            plt.tight_layout()
-            buffer = io.BytesIO()
-            plt.savefig(buffer, format='png')
-            buffer.seek(0)
-            writer.append_data(Image.open(buffer))
-            buffer.close()
-            plt.clf()
+            with plt.xkcd(scale=scale, length=length, randomness=rand): # temporary overwrite
+                drawFun(*drawArgs)
+                plt.tight_layout()
+                buffer = io.BytesIO()
+                plt.savefig(buffer, format='png')
+                buffer.seek(0)
+                writer.append_data(Image.open(buffer))
+                buffer.close()
+                plt.clf()
     return
 
 def drawPow(p):
